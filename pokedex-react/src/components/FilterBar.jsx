@@ -7,7 +7,7 @@ export const FilterBar = () => {
   return (
     <div className={`container-filters ${active ? "active" : ""}`}>
       <div className="filter-by-type">
-        <span>Tipo</span>
+        <span>Type</span>
 
         <div className="group-type">
           <input
