@@ -77,6 +77,9 @@ export const PokemonProvider = ({ children }) => {
         valueSearch,
         onInputChange,
         onResetForm,
+        allPokemons,
+        globalPokemons,
+        getPokemonByID,
       }}
     >
       {children}
