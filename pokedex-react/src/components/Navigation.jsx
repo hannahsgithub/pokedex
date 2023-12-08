@@ -1,22 +1,31 @@
 import { useContext } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { PokemonContext } from "../context/PokemonContext";
+import logo from "../assets/Pokedex_logo.png";
 
 export const Navigation = () => {
-  const { number } = useContext(PokemonContext);
-  console.log(number);
+  const { onInputChange, valueSearch, onResetForm } =
+    useContext(PokemonContext);
+
+  const navigate = useNavigate();
+
+  const onSearchSubmit = (e) => {
+    e.preventDefault();
+    navigate("/search", {
+      state: valueSearch,
+    });
+
+    onResetForm();
+  };
 
   return (
     <>
       <header className="container">
         <Link to="/" className="logo">
-          <img
-            src="https://archives.bulbagarden.net/media/upload/4/4b/Pok%C3%A9dex_logo.png"
-            alt="Logo Pokedex"
-          />
+          <img src="src/assets/Pokedex_logo.png" alt="Logo Pokedex" />
         </Link>
-        {/* onSubmit={onSearchSubmit} */}
-        <form>
+
+        <form onSubmit={onSearchSubmit}>
           <div className="form-group">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -36,13 +45,13 @@ export const Navigation = () => {
               type="search"
               name="valueSearch"
               id=""
-              // value={valueSearch}
-              // onChange={onInputChange}
-              placeholder="Search Pokemon number"
+              value={valueSearch}
+              onChange={onInputChange}
+              placeholder="Buscar nombre de pokemon"
             />
           </div>
 
-          <button className="btn-search">Search</button>
+          <button className="btn-search">Buscar</button>
         </form>
       </header>
 

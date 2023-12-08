@@ -8,25 +8,25 @@ export const PokemonList = () => {
 
   return (
     <>
-      {/* {loading ? (
+      {loading ? (
         <Loader />
-      ) : ( */}
-      <div className="card-list-pokemon container">
-        {/* {filteredPokemons.length ? (
+      ) : (
+        <div className="card-list-pokemon container">
+          {filteredPokemons.length ? (
             <>
               {filteredPokemons.map((pokemon) => (
                 <CardPokemon pokemon={pokemon} key={pokemon.id} />
               ))}
             </>
           ) : (
-            <> */}
-        {allPokemons.map((pokemon) => (
-          <CardPokemon pokemon={pokemon} key={pokemon.id} />
-        ))}
-        {/* </>
-          )} */}
-      </div>
-      {/* )} */}
+            <>
+              {allPokemons.map((pokemon) => (
+                <CardPokemon pokemon={pokemon} key={pokemon.id} />
+              ))}
+            </>
+          )}
+        </div>
+      )}
     </>
   );
 };
