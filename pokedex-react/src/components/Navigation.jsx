@@ -1,7 +1,11 @@
 import { useContext } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
+import { PokemonContext } from "../context/PokemonContext";
 
 export const Navigation = () => {
+  const { number } = useContext(PokemonContext);
+  console.log(number);
+
   return (
     <>
       <header className="container">
@@ -34,11 +38,11 @@ export const Navigation = () => {
               id=""
               // value={valueSearch}
               // onChange={onInputChange}
-              placeholder="Buscar nombre de pokemon"
+              placeholder="Search Pokemon number"
             />
           </div>
 
-          <button className="btn-search">Buscar</button>
+          <button className="btn-search">Search</button>
         </form>
       </header>
 
