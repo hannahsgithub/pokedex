@@ -1,11 +1,25 @@
 import React, { useContext } from "react";
 import { PokemonContext } from "../context/PokemonContext";
+import Button from "react-bootstrap/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 export const FilterBar = () => {
-  const { active, handleCheckbox } = useContext(PokemonContext);
+  const { active, handleCheckbox, setActive } = useContext(PokemonContext);
+
+  const closeSidebar = () => {
+    setActive(false);
+  };
 
   return (
     <div className={`container-filters ${active ? "active" : ""}`}>
+      <Button
+        style={{ marginRight: "2rem", width: "2rem" }}
+        onClick={closeSidebar}
+      >
+        <FontAwesomeIcon icon={faChevronLeft} />
+      </Button>
+
       <div className="filter-by-type">
         <span>Type</span>
 
