@@ -15,13 +15,19 @@ export const PokemonList = () => {
           {filteredPokemons.length ? (
             <>
               {filteredPokemons.map((pokemon) => (
-                <CardPokemon pokemon={pokemon} key={pokemon.id} />
+                <CardPokemon
+                  pokemon={capitalizePokemonName(pokemon)}
+                  key={pokemon.id}
+                />
               ))}
             </>
           ) : (
             <>
               {allPokemons.map((pokemon) => (
-                <CardPokemon pokemon={pokemon} key={pokemon.id} />
+                <CardPokemon
+                  pokemon={capitalizePokemonName(pokemon)}
+                  key={pokemon.id}
+                />
               ))}
             </>
           )}
@@ -29,4 +35,10 @@ export const PokemonList = () => {
       )}
     </>
   );
+};
+
+const capitalizePokemonName = (pokemon) => {
+  const capitalizedName =
+    pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+  return { ...pokemon, name: capitalizedName };
 };

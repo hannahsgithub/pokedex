@@ -12,17 +12,34 @@ export const FilterBar = () => {
   };
 
   return (
-    <div className={`container-filters ${active ? "active" : ""}`}>
-      <Button
-        style={{ marginRight: "2rem", width: "2rem" }}
-        onClick={closeSidebar}
+    <div
+      className={`container-filters ${active ? "active" : ""}`}
+      style={{
+        paddingTop: "0px",
+        justifyContent: "center",
+        alignItems: "center",
+        marginBottom: "30px",
+        overflowY: "auto",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <div
+        style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}
       >
-        <FontAwesomeIcon icon={faChevronLeft} />
-      </Button>
+        <Button
+          style={{ marginRight: "2rem", width: "2rem", height: "2rem" }}
+          onClick={closeSidebar}
+        >
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </Button>
 
-      <div className="filter-by-type">
-        <span>Type</span>
+        <div className="filter-by-type">
+          <span>Type</span>
+        </div>
+      </div>
 
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <div className="group-type">
           <input
             type="checkbox"

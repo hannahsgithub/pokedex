@@ -23,7 +23,7 @@ export const PokemonPage = () => {
   }, []);
 
   return (
-    <main className="container main-pokemon">
+    <main className="container main-pokemon" style={{ paddingBottom: "50px" }}>
       {loading ? (
         <Loader />
       ) : (
@@ -49,7 +49,7 @@ export const PokemonPage = () => {
               <div className="info-pokemon">
                 <div className="group-info">
                   <p>Height</p>
-                  <span>{pokemon.height}</span>
+                  <span>{pokemon.height}0CM</span>
                 </div>
                 <div className="group-info">
                   <p>Weight</p>

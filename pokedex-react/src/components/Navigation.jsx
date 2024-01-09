@@ -26,7 +26,7 @@ export const Navigation = () => {
         </Link>
 
         <form onSubmit={onSearchSubmit}>
-          <div className="form-group">
+          <div className="form-group" style={{ background: "white" }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
