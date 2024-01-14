@@ -1,6 +1,6 @@
 # Pokedex
 
-I decided to make a Pokedex because I play too much PokemonGo.
+I decided to make a Pokedex because I played too much PokemonGo 
 
 ## Preview
 
